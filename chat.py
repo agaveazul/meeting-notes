@@ -2,7 +2,6 @@ from main import run_llm
 import streamlit as st
 from langchain.schema import HumanMessage, SystemMessage
 from langchain_community.chat_message_histories import StreamlitChatMessageHistory
-# from handlers.chat_model_start_handler import ChatModelStartHandler
 from langchain_community.chat_models import ChatOpenAI
 
 st.header("Meeting Notes & Action Items")
@@ -16,10 +15,8 @@ if not openai_api_key:
     st.info("Please add your OpenAI API key to continue.")
     st.stop()
 
-# handler = ChatModelStartHandler()
 chat = ChatOpenAI(
     openai_api_key=openai_api_key,
-    # callbacks=[handler],
     model_name="gpt-4"
 )
 
